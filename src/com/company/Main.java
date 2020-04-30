@@ -8,8 +8,10 @@ public class Main {
         me.fName = "Filip";
         me.lName = "Piotrowicz";
 
-        Animal dog = new Animal("dosdg", "loki");
-        System.out.println(dog.name);
+        Animal dog = new Animal("dog", "loki");
+        dog.feed();
+
+
 
 
     }

@@ -22,4 +22,20 @@ public class Animal {
             System.out.println("w8, that's illegal");
         }
     }
+
+
+    void feed()
+    {
+        if (weight <= 0)
+        {
+            System.out.println("too late, dead shall not eat");
+        }
+        else
+        {
+            weight += 0.5;
+            System.out.println("its about time, now im " + weight + "kg");
+
+        }
+
+    }
 }
