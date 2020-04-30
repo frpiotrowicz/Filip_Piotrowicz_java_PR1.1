@@ -8,14 +8,13 @@ public class Main {
         me.fName = "Filip";
         me.lName = "Piotrowicz";
 
-        
-        me.pet =  new Animal("rabbit", "krol");
-        me.pet.feed();
-        me.pet.feed();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.feed();
+        me.car = new Car("ford", "mustang", 1969);
+        me.car.plates = "123456";
+        me.car.colour = "black";
+        me.car.showMyCar();
+
+
+
 
 
 
