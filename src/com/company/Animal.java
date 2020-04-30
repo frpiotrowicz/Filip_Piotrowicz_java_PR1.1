@@ -38,4 +38,16 @@ public class Animal {
         }
 
     }
+
+    void takeForAWalk()
+    {
+        if (weight <= 0)
+        {
+            System.out.println("dead shall not walk");
+        }
+        else {
+            weight--;
+            System.out.println("now im " + weight + "kg... FEED MEEE!!");
+        }
+    }
 }

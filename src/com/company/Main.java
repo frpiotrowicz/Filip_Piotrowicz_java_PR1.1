@@ -8,8 +8,17 @@ public class Main {
         me.fName = "Filip";
         me.lName = "Piotrowicz";
 
-        Animal dog = new Animal("dog", "loki");
-        dog.feed();
+        
+        me.pet =  new Animal("rabbit", "krol");
+        me.pet.feed();
+        me.pet.feed();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.takeForAWalk();
+        me.pet.feed();
+
+
+
 
 
 
