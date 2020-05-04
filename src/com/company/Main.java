@@ -24,8 +24,10 @@ public class Main {
         me.setSalary(120.0);
         SECONDS.sleep(10);
         me.getSalary();
+        me.setSalary(-120.0);
         SECONDS.sleep(10);
         me.getSalary();
+
 
 
     }
