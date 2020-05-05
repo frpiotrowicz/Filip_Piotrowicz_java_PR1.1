@@ -4,12 +4,15 @@ import com.company.devices.Car;
 import com.company.devices.Device;
 import com.company.devices.Phone;
 
+import java.sql.SQLOutput;
+
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
 
         Human me = new Human();
-        me.lName = "Piotrowicz";
+        Human someone = new Human();
+
 
         Car car = new Car("ford", "mustang", 1969);
         Animal dog = new Animal("dog");
@@ -17,20 +20,19 @@ public class Main {
 
         car.value = 120.0;
         me.setCar(car);
-        me.getCar().plates = "123456";
-        me.getCar().colour = "black";
-        car.sell();
-        try {
-            me.sell();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        lg.sell();
-        try {
-            dog.sell();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        me.phone = lg;
+
+
+        someone.setCash(140.0);
+        car.sell(me, someone, 120.0);
+
+        System.out.println(me.getCar());
+        System.out.println(someone.getCar());
+        System.out.println(me.getCash());
+        System.out.println(someone.getCash());
+
+
+
 
     }
 }

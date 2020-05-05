@@ -66,7 +66,7 @@ public class Animal implements Edible, Saleable {
     }
 
     @Override
-    public void sell() throws Exception {
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
         if (this instanceof Human)
         {
             throw new Exception("slavery doesnt work like this anymore");

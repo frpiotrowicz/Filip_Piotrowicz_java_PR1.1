@@ -1,5 +1,6 @@
 package com.company.devices;
 
+import com.company.Human;
 import com.company.Saleable;
 
 public abstract class Device implements Saleable {
@@ -24,4 +25,6 @@ public abstract class Device implements Saleable {
                 '}';
     }
     public abstract void turnOn();
+
+
 }

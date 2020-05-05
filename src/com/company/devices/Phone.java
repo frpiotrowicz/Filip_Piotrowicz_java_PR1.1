@@ -1,5 +1,7 @@
 package com.company.devices;
 
+import com.company.Human;
+
 public class Phone extends Device {
     Double screenSize;
     String osystem;
@@ -27,7 +29,7 @@ public class Phone extends Device {
     }
 
     @Override
-    public void sell() {
-        System.out.println("sold");
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+
     }
 }

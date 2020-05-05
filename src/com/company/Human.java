@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.devices.Car;
+import com.company.devices.Phone;
 
 import java.time.LocalDateTime;
 
@@ -9,7 +10,9 @@ public class Human extends Animal {
     String lName;
     Animal pet;
     private Car car;
+    Phone phone;
 
+    private Double cash = 100.0;
     private Double salary = 100.0;
     private LocalDateTime date;
     private Double prevSalary;
@@ -63,6 +66,16 @@ public class Human extends Animal {
 
     }
 
+    public Double getCash()
+    {
+        return cash;
+    }
+
+
+    public void setCash(Double cash)
+    {
+        this.cash = cash;
+    }
     @Override
     public String toString() {
         return "Human{" +
@@ -71,6 +84,7 @@ public class Human extends Animal {
                 ", pet=" + pet +
                 ", car=" + car +
                 ", salary=" + salary +
+                ", chash=" + cash +
                 '}';
     }
 }

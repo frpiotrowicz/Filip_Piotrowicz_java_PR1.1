@@ -1,5 +1,7 @@
 package com.company.devices;
 
+import com.company.Human;
+
 public class Car extends Device {
     public String plates;
 
@@ -26,10 +28,25 @@ public class Car extends Device {
 
     }
 
-    @Override
-    public void sell() {
-        System.out.println("sold");
 
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if(buyer.getCash() > price)
+        {
+            if (seller.getCar().equals(this))
+            {
+                buyer.setCar(this);
+                seller.setCar(null);
+                seller.setCash(seller.getCash()+price);
+                buyer.setCash(buyer.getCash()-price);
+            }
+            else {
+                System.out.println("this seller do not own this car");
+            }
+        }
+        else {
+            System.out.println("buyer do not have enough money");
+        }
     }
 }
 
