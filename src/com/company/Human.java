@@ -7,7 +7,7 @@ public class Human {
     String fName;
     String lName;
     Animal pet;
-    Car car;
+    private Car car;
 
     private Double salary = 100.0;
     private LocalDateTime date;
@@ -35,5 +35,26 @@ public class Human {
         {
             System.out.println("your employee will not pay you for his work. salary must be above 0$$." + "\n");
         }
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        if (car.value < this.salary)
+        {
+            this.car = car;
+            System.out.println("you bought a car for " + car.value + "$$");
+        }
+        else if (car.value < this.salary*12)
+        {
+            this.car = car;
+            System.out.println("you kinda bought a car for " + car.value + "$$, buuut it is stil not yours for like another year");
+        }
+        else {
+            System.out.println("nope, find cheaper car or better job. Just remember, walking is healthy");
+        }
+
     }
 }

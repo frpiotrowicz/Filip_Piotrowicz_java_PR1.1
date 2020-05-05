@@ -13,20 +13,15 @@ public class Main {
         Human me = new Human();
         me.fName = "Filip";
         me.lName = "Piotrowicz";
-/*
-        me.car = new Car("ford", "mustang", 1969);
-        me.car.plates = "123456";
-        me.car.colour = "black";
-        me.car.showMyCar();
-*/
-        me.getSalary();
-        //tu sprawdzam tylko czy dziala
-        me.setSalary(120.0);
-        SECONDS.sleep(10);
-        me.getSalary();
-        me.setSalary(-120.0);
-        SECONDS.sleep(10);
-        me.getSalary();
+
+        Car car = new Car("ford", "mustang", 1969);
+        car.value = 120.0;
+        me.setCar(car);
+        me.getCar().plates = "123456";
+        me.getCar().colour = "black";
+        me.getCar().showMyCar();
+
+
 
 
 

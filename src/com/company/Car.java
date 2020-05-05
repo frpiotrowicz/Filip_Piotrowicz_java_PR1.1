@@ -6,6 +6,7 @@ public class Car {
     final int yearOfProduction;
     String colour;
     String plates;
+    Double value;
 
 
     public Car(String producent, String model, int yearOfProduction) {
