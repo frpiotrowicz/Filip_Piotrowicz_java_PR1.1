@@ -9,8 +9,7 @@ public class Animal {
     static final Double defRabbitweight = 1.0;
 
 
-    public Animal(String species1, String name1) {
-        this.name = name1;
+    public Animal(String species1) {
         this.species = species1;
         if (species1 == "dog") {
             this.weight = defDogweight;

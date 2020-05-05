@@ -1,14 +1,11 @@
 package com.company.devices;
 
-public class Phone {
-    String producer;
-    String model;
+public class Phone extends Device {
     Double screenSize;
     String osystem;
 
-    public Phone(String producer, String model, Double screenSize, String osystem) {
-        this.producer = producer;
-        this.model = model;
+    public Phone(String producer, String model, int yearOfProduction, Double screenSize, String osystem) {
+        super(producer, model, yearOfProduction);
         this.screenSize = screenSize;
         this.osystem = osystem;
     }

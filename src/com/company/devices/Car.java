@@ -1,24 +1,17 @@
 package com.company.devices;
 
-public class Car {
-    public String colour;
+public class Car extends Device {
     public String plates;
-    public Double value;
-    final String producent;
-    final String model;
-    final int yearOfProduction;
 
+    public Car(String producer, String model, int yearOfProduction) {
 
-    public Car(String producent, String model, int yearOfProduction) {
-        this.producent = producent;
-        this.model = model;
-        this.yearOfProduction = yearOfProduction;
+        super(producer, model, yearOfProduction);
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "producent='" + producent + '\'' +
+                "producent='" + producer + '\'' +
                 ", model='" + model + '\'' +
                 ", yearOfProduction=" + yearOfProduction +
                 ", colour='" + colour + '\'' +

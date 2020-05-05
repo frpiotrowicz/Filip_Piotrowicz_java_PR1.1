@@ -4,8 +4,8 @@ import com.company.devices.Car;
 
 import java.time.LocalDateTime;
 
-public class Human {
-    String fName;
+public class Human extends Animal {
+    String name;
     String lName;
     Animal pet;
     private Car car;
@@ -13,6 +13,10 @@ public class Human {
     private Double salary = 100.0;
     private LocalDateTime date;
     private Double prevSalary;
+
+    public Human() {
+        super("Homo Sapiens");
+    }
 
 
     public Double getSalary() {
@@ -62,7 +66,7 @@ public class Human {
     @Override
     public String toString() {
         return "Human{" +
-                "fName='" + fName + '\'' +
+                "fName='" + name + '\'' +
                 ", lName='" + lName + '\'' +
                 ", pet=" + pet +
                 ", car=" + car +
