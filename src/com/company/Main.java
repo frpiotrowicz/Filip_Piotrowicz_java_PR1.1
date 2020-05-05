@@ -20,9 +20,17 @@ public class Main {
         me.getCar().plates = "123456";
         me.getCar().colour = "black";
         car.sell();
-        me.sell();
+        try {
+            me.sell();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         lg.sell();
-        dog.sell();
+        try {
+            dog.sell();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }

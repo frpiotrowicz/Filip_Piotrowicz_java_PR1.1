@@ -66,10 +66,10 @@ public class Animal implements Edible, Saleable {
     }
 
     @Override
-    public void sell() {
-        if (this.species.equals("Homo Sapiens"))
+    public void sell() throws Exception {
+        if (this instanceof Human)
         {
-            System.out.println("humans are not for sale");
+            throw new Exception("slavery doesnt work like this anymore");
         }
         else {
             System.out.println("sold");
