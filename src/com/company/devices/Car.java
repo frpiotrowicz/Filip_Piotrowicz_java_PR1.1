@@ -1,12 +1,12 @@
-package com.company;
+package com.company.devices;
 
 public class Car {
+    public String colour;
+    public String plates;
+    public Double value;
     final String producent;
     final String model;
     final int yearOfProduction;
-    String colour;
-    String plates;
-    Double value;
 
 
     public Car(String producent, String model, int yearOfProduction) {

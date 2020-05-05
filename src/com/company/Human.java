@@ -1,7 +1,8 @@
 package com.company;
 
+import com.company.devices.Car;
+
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Human {
     String fName;

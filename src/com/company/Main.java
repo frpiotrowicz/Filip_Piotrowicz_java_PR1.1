@@ -1,10 +1,7 @@
 package com.company;
 
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
-import java.util.concurrent.TimeUnit;
-
-import static java.util.concurrent.TimeUnit.*;
+import com.company.devices.Car;
+import com.company.devices.Phone;
 
 public class Main {
 
