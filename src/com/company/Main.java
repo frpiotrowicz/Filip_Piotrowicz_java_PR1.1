@@ -15,24 +15,20 @@ public class Main {
         me.lName = "Piotrowicz";
 
         Car car = new Car("ford", "mustang", 1969);
-        Car car1 = new Car("ford", "mustang", 1969);
+        Animal dog = new Animal("dog", "loki");
+        Phone lg = new Phone("LG","V",6.0,"android" );
 
-        System.out.println(car == car1);
-        System.out.println(car.equals(car1));
-
-        Car x = car;
-        System.out.println(car.equals(x));
-        System.out.println(car == x);
-        System.out.println(new Car("ford", "mustang", 1969).equals( new Car("ford", "mustang", 1969)));
- /*
         car.value = 120.0;
         me.setCar(car);
         me.getCar().plates = "123456";
         me.getCar().colour = "black";
-        me.getCar().showMyCar();
-*/
         System.out.println(car);
-        System.out.println(car1);
+        System.out.println();
+        System.out.println(me);
+        System.out.println();
+        System.out.println(dog);
+        System.out.println();
+        System.out.println(lg);
 
     }
 }

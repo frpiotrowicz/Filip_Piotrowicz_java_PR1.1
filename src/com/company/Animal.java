@@ -50,4 +50,13 @@ public class Animal {
             System.out.println("now im " + weight + "kg... FEED MEEE!!");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", species='" + species + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
 }

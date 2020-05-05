@@ -57,4 +57,15 @@ public class Human {
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", pet=" + pet +
+                ", car=" + car +
+                ", salary=" + salary +
+                '}';
+    }
 }

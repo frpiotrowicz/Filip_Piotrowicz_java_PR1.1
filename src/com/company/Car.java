@@ -15,10 +15,18 @@ public class Car {
         this.yearOfProduction = yearOfProduction;
     }
 
-    void showMyCar()
-    {
-        System.out.println(model + " "+ producent + " " + yearOfProduction + " " + plates + " " + colour);
+    @Override
+    public String toString() {
+        return "Car{" +
+                "producent='" + producent + '\'' +
+                ", model='" + model + '\'' +
+                ", yearOfProduction=" + yearOfProduction +
+                ", colour='" + colour + '\'' +
+                ", plates='" + plates + '\'' +
+                ", value=" + value +
+                '}';
     }
+
 }
 
 
