@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.devices.Car;
+import com.company.devices.Device;
 import com.company.devices.Phone;
 
 public class Main {
@@ -18,8 +19,10 @@ public class Main {
         me.setCar(car);
         me.getCar().plates = "123456";
         me.getCar().colour = "black";
+        car.sell();
+        me.sell();
+        lg.sell();
+        dog.sell();
 
-        System.out.println(me instanceof Animal);
-        System.out.println(me instanceof Human);
     }
 }

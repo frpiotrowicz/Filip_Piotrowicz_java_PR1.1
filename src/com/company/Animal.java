@@ -1,6 +1,6 @@
 package com.company;
 
-public class Animal {
+public class Animal implements Edible, Saleable {
     String name;
     final String species;
     private Double weight;
@@ -57,5 +57,22 @@ public class Animal {
                 ", species='" + species + '\'' +
                 ", weight=" + weight +
                 '}';
+    }
+
+    @Override
+    public void beEaten() {
+        this.weight = 0.0;
+        System.out.println("animal have been eaten");
+    }
+
+    @Override
+    public void sell() {
+        if (this.species.equals("Homo Sapiens"))
+        {
+            System.out.println("humans are not for sale");
+        }
+        else {
+            System.out.println("sold");
+        }
     }
 }

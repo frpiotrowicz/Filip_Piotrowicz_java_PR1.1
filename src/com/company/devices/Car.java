@@ -20,6 +20,17 @@ public class Car extends Device {
                 '}';
     }
 
+    @Override
+    public void turnOn() {
+        System.out.println("turn the engine on");
+
+    }
+
+    @Override
+    public void sell() {
+        System.out.println("sold");
+
+    }
 }
 
 

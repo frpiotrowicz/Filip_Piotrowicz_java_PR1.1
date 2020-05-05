@@ -19,4 +19,15 @@ public class Phone extends Device {
                 ", osystem='" + osystem + '\'' +
                 '}';
     }
+
+    @Override
+    public void turnOn() {
+        System.out.println("turn the power on");
+
+    }
+
+    @Override
+    public void sell() {
+        System.out.println("sold");
+    }
 }
