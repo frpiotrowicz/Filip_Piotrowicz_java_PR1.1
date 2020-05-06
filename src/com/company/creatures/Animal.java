@@ -1,9 +1,9 @@
-package com.company;
+package com.company.creatures;
 
-public class Animal implements Edible, Saleable {
-    String name;
-    final String species;
-    private Double weight;
+public abstract class Animal implements Saleable {
+    public final String species;
+    public String name;
+    protected Double weight;
     static final Double defDogweight = 30.0;
     static final Double defCatweight = 5.0;
     static final Double defRabbitweight = 1.0;
@@ -23,14 +23,10 @@ public class Animal implements Edible, Saleable {
     }
 
 
-    void feed()
-    {
-        if (weight <= 0)
-        {
+    public void feed() {
+        if (weight <= 0) {
             System.out.println("too late, dead shall not eat");
-        }
-        else
-        {
+        } else {
             weight += 0.5;
             System.out.println("its about time, now im " + weight + "kg");
 
@@ -38,13 +34,10 @@ public class Animal implements Edible, Saleable {
 
     }
 
-    void takeForAWalk()
-    {
-        if (weight <= 0)
-        {
+    public void takeForAWalk() {
+        if (weight <= 0) {
             System.out.println("dead shall not walk");
-        }
-        else {
+        } else {
             weight--;
             System.out.println("now im " + weight + "kg... FEED MEEE!!");
         }
@@ -59,11 +52,6 @@ public class Animal implements Edible, Saleable {
                 '}';
     }
 
-    @Override
-    public void beEaten() {
-        this.weight = 0.0;
-        System.out.println("animal have been eaten");
-    }
 
     @Override
     public void sell(Human seller, Human buyer, Double price) throws Exception {

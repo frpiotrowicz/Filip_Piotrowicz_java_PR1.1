@@ -1,7 +1,6 @@
 package com.company.devices;
 
-import com.company.Human;
-import com.company.Saleable;
+import com.company.creatures.Saleable;
 
 public abstract class Device implements Saleable {
     final String producer;
