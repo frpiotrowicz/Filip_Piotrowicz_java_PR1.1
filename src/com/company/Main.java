@@ -21,6 +21,7 @@ public class Main {
         car.value = 120.0;
         me.setCar(car);
         me.phone = lg;
+        me.pet = dog;
 
 
         someone.setCash(140.0);
@@ -31,8 +32,17 @@ public class Main {
         System.out.println(me.getCash());
         System.out.println(someone.getCash());
 
+        lg.sell(me, someone, 10.0);
+        System.out.println(me.phone);
+        System.out.println(someone.phone);
+        System.out.println(me.getCash());
+        System.out.println(someone.getCash());
 
-
+        dog.sell(me, someone, 8.0);
+        System.out.println(me.pet);
+        System.out.println(someone.pet);
+        System.out.println(me.getCash());
+        System.out.println(someone.getCash());
 
     }
 }

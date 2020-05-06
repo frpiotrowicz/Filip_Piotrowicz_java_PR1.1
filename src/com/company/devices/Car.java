@@ -39,6 +39,7 @@ public class Car extends Device {
                 seller.setCar(null);
                 seller.setCash(seller.getCash()+price);
                 buyer.setCash(buyer.getCash()-price);
+                System.out.println("allright you bought " + this + "for " + price);
             }
             else {
                 System.out.println("this seller do not own this car");

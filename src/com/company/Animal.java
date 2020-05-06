@@ -72,7 +72,25 @@ public class Animal implements Edible, Saleable {
             throw new Exception("slavery doesnt work like this anymore");
         }
         else {
-            System.out.println("sold");
-        }
+            if (buyer.getCash() > price)
+            {
+                if (seller.pet.equals(this))
+                {
+                    buyer.pet = this;
+                    seller.pet = null;
+                    seller.setCash(seller.getCash()+price);
+                    buyer.setCash(buyer.getCash()-price);
+                    System.out.println("allright you bought " + this + "for " + price);
+                }
+                else
+                {
+                    System.out.println("seller do not own this pet");
+                }
+            }
+            else
+            {
+                System.out.println("buyer do not have enough money");
+            }
+            }
     }
 }

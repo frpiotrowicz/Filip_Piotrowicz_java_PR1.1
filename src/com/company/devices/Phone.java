@@ -30,6 +30,25 @@ public class Phone extends Device {
 
     @Override
     public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (buyer.getCash() > price)
+        {
+            if (seller.phone.equals(this))
+            {
+                buyer.phone = this;
+                seller.phone = null;
+                seller.setCash(seller.getCash()+price);
+                buyer.setCash(buyer.getCash()-price);
+                System.out.println("allright you bought " + this + "for " + price);
+            }
+            else
+            {
+                System.out.println("seller do not own this phone");
+            }
+        }
+        else
+        {
+            System.out.println("buyer do not have enough money");
+        }
 
     }
 }

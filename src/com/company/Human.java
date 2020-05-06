@@ -8,9 +8,9 @@ import java.time.LocalDateTime;
 public class Human extends Animal {
     String name;
     String lName;
-    Animal pet;
+    public Animal pet;
     private Car car;
-    Phone phone;
+    public Phone phone;
 
     private Double cash = 100.0;
     private Double salary = 100.0;
@@ -50,20 +50,7 @@ public class Human extends Animal {
     }
 
     public void setCar(Car car) {
-        if (car.value < this.salary)
-        {
-            this.car = car;
-            System.out.println("you bought a car for " + car.value + "$$");
-        }
-        else if (car.value < this.salary*12)
-        {
-            this.car = car;
-            System.out.println("you kinda bought a car for " + car.value + "$$, buuut it is stil not yours for like another year");
-        }
-        else {
-            System.out.println("nope, find cheaper car or better job. Just remember, walking is healthy");
-        }
-
+       this.car = car;
     }
 
     public Double getCash()
