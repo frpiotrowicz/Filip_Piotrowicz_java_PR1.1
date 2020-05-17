@@ -1,13 +1,14 @@
 package com.company.creatures;
 
-public abstract class Animal implements Saleable {
+public abstract class Animal implements Saleable, Feedable {
     public final String species;
     public String name;
     protected Double weight;
+    static final Double defFoodWeight = 0.3;
     static final Double defDogweight = 30.0;
     static final Double defCatweight = 5.0;
     static final Double defRabbitweight = 1.0;
-
+    static final Double foodWeight = 1.0;
 
     public Animal(String species1) {
         this.species = species1;
@@ -23,15 +24,19 @@ public abstract class Animal implements Saleable {
     }
 
 
-    public void feed() {
+    public void feed(Double foodWeight) {
         if (weight <= 0) {
             System.out.println("too late, dead shall not eat");
         } else {
-            weight += 0.5;
+            weight += foodWeight;
             System.out.println("its about time, now im " + weight + "kg");
 
         }
 
+    }
+
+    public void feed() {
+        feed(defFoodWeight);
     }
 
     public void takeForAWalk() {
@@ -81,4 +86,5 @@ public abstract class Animal implements Saleable {
             }
             }
     }
+
 }

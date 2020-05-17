@@ -5,9 +5,10 @@ import com.company.devices.Phone;
 
 import java.time.LocalDateTime;
 
-public class Human extends Animal {
+public class Human extends Animal implements Feedable {
     String name;
     String lName;
+    public Animal farmAnimal;
     public Animal pet;
     private Car car;
     public Phone phone;
@@ -19,6 +20,7 @@ public class Human extends Animal {
 
     public Human() {
         super("Homo Sapiens");
+        this.weight = 85.0;
     }
 
 
@@ -74,4 +76,10 @@ public class Human extends Animal {
                 ", chash=" + cash +
                 '}';
     }
+
+    @Override
+    public void feed() {
+        super.feed(foodWeight);
+    }
+
 }
