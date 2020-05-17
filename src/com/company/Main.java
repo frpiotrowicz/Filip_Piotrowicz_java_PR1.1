@@ -24,18 +24,8 @@ public class Main {
         me.pet = dog;
         me.farmAnimal = rabbit;
 
-        me.feed();
-        me.feed();
-        me.feed();
-
-        me.pet.feed();
-        me.pet.feed();
-        me.pet.feed();
-
-        me.farmAnimal.feed();
-        me.farmAnimal.feed();
-        me.farmAnimal.feed();
-
+        me.phone.turnOn();
+        me.car.turnOn();
 
     }
 }
