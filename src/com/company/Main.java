@@ -24,8 +24,8 @@ public class Main {
         me.pet = dog;
         me.farmAnimal = rabbit;
 
-        me.phone.turnOn();
-        me.car.turnOn();
+        String[] apps = {"mail", "browser", "office", "calculator"};
 
+        me.phone.installAnnApp(apps);
     }
 }

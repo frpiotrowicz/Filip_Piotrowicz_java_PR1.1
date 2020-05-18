@@ -10,7 +10,7 @@ public class Human extends Animal implements Feedable {
     String lName;
     public Animal farmAnimal;
     public Animal pet;
-    public Car car;
+    private Car car;
     public Phone phone;
 
     private Double cash = 100.0;
