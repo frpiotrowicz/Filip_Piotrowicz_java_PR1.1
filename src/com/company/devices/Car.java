@@ -2,7 +2,8 @@ package com.company.devices;
 
 import com.company.creatures.Human;
 
-public class Car extends Device {
+public abstract class Car extends Device {
+
     public String plates;
 
     public Car(String producer, String model, int yearOfProduction) {
@@ -40,15 +41,15 @@ public class Car extends Device {
                 seller.setCash(seller.getCash()+price);
                 buyer.setCash(buyer.getCash()-price);
                 System.out.println("allright you bought " + this + "for " + price);
-            }
-            else {
+            } else {
                 System.out.println("this seller do not own this car");
             }
-        }
-        else {
+        } else {
             System.out.println("buyer do not have enough money");
         }
     }
+
+    public abstract void refuel();
 }
 
 

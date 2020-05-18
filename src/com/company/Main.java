@@ -3,7 +3,7 @@ package com.company;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Human;
 import com.company.creatures.Pet;
-import com.company.devices.Car;
+import com.company.devices.LPG;
 import com.company.devices.Phone;
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
         Human someone = new Human();
 
         FarmAnimal rabbit = new FarmAnimal("rabbit");
-        Car car = new Car("ford", "mustang", 1969);
+        LPG car = new LPG("ford", "mustang", 1969);
         Pet dog = new Pet("dog");
         Phone lg = new Phone("LG", "V", 2012, 6.0, "android");
 
@@ -24,8 +24,6 @@ public class Main {
         me.pet = dog;
         me.farmAnimal = rabbit;
 
-        String[] apps = {"mail", "browser", "office", "calculator"};
-
-        me.phone.installAnnApp(apps);
+        me.car.refuel();
     }
 }
