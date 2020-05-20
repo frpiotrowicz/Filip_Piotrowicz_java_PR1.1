@@ -12,8 +12,13 @@ public class Phone extends Device {
     static final String defProtocol = "https";
     static final String defAppVersion = "5.1";
 
-    public Phone(String producer, String model, int yearOfProduction, Double screenSize, String osystem) {
-        super(producer, model, yearOfProduction);
+    public Phone(String producer,
+                 String model,
+                 int yearOfProduction,
+                 Double value,
+                 Double screenSize,
+                 String osystem) {
+        super(producer, model, yearOfProduction, value);
         this.screenSize = screenSize;
         this.osystem = osystem;
     }

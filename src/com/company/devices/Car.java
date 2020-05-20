@@ -6,9 +6,12 @@ public abstract class Car extends Device {
 
     public String plates;
 
-    public Car(String producer, String model, int yearOfProduction) {
+    public Car(String producer,
+               String model,
+               int yearOfProduction,
+               Double value) {
 
-        super(producer, model, yearOfProduction);
+        super(producer, model, yearOfProduction, value);
     }
 
     @Override

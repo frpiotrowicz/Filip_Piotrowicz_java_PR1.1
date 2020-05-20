@@ -4,8 +4,11 @@ public class LPG extends Car {
 
     static final String fuelType = "LPG";
 
-    public LPG(String producer, String model, int yearOfProduction) {
-        super(producer, model, yearOfProduction);
+    public LPG(String producer,
+               String model,
+               int yearOfProduction,
+               Double value) {
+        super(producer, model, yearOfProduction, value);
     }
 
     @Override

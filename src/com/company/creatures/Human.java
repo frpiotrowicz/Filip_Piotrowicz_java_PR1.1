@@ -6,12 +6,14 @@ import com.company.devices.Phone;
 import java.time.LocalDateTime;
 
 public class Human extends Animal implements Feedable {
+    private static final Integer defGarageSize = 3;
     String name;
     String lName;
     public Animal farmAnimal;
     public Animal pet;
     public Car car;
     public Phone phone;
+    public Car[] cars;
 
     private Double cash = 100.0;
     private Double salary = 100.0;
@@ -21,6 +23,13 @@ public class Human extends Animal implements Feedable {
     public Human() {
         super("Homo Sapiens");
         this.weight = 85.0;
+        this.cars = new Car[defGarageSize];
+    }
+
+    public Human(Integer garageSize) {
+        super("Homo Sapiens");
+        this.weight = 85.0;
+        this.cars = new Car[garageSize];
     }
 
 
@@ -80,6 +89,14 @@ public class Human extends Animal implements Feedable {
     @Override
     public void feed() {
         super.feed(foodWeight);
+    }
+
+    public void carsvalue() {
+        Double sum = 0.0;
+        for (int i = 0; i < this.cars.length; i++) {
+            sum += this.cars[i].value;
+        }
+        System.out.println("value of your garage content is " + sum);
     }
 
 }

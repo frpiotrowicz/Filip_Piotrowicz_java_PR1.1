@@ -3,8 +3,11 @@ package com.company.devices;
 public class Diesel extends Car {
     static final String fuelType = "Diesel";
 
-    public Diesel(String producer, String model, int yearOfProduction) {
-        super(producer, model, yearOfProduction);
+    public Diesel(String producer,
+                  String model,
+                  int yearOfProduction,
+                  Double value) {
+        super(producer, model, yearOfProduction, value);
     }
 
     @Override
