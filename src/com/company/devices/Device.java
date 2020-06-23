@@ -33,6 +33,11 @@ public abstract class Device implements Saleable, Comparable<Device> {
 
     @Override
     public int compareTo(Device o) {
+        if (this == null) {
+            return 1;
+        } else if (o == null) {
+            return -1;
+        }
         return this.yearOfProduction - o.yearOfProduction;
     }
 }

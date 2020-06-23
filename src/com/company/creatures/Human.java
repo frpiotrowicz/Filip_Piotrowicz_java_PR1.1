@@ -2,8 +2,10 @@ package com.company.creatures;
 
 import com.company.devices.Car;
 import com.company.devices.Phone;
+import com.company.devices.YearOfProductionComparator;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
 public class Human extends Animal implements Feedable {
     private static final Integer defGarageSize = 3;
@@ -13,9 +15,9 @@ public class Human extends Animal implements Feedable {
     public Animal pet;
     public Car car;
     public Phone phone;
-    public Car[] cars;
+    private Car[] garage;
 
-    private Double cash = 100.0;
+    private Double cash = 3000.0;
     private Double salary = 100.0;
     private LocalDateTime date;
     private Double prevSalary;
@@ -23,13 +25,13 @@ public class Human extends Animal implements Feedable {
     public Human() {
         super("Homo Sapiens");
         this.weight = 85.0;
-        this.cars = new Car[defGarageSize];
+        this.garage = new Car[defGarageSize];
     }
 
     public Human(Integer garageSize) {
         super("Homo Sapiens");
         this.weight = 85.0;
-        this.cars = new Car[garageSize];
+        this.garage = new Car[garageSize];
     }
 
 
@@ -61,19 +63,30 @@ public class Human extends Animal implements Feedable {
     }
 
     public void setCar(Car car) {
-       this.car = car;
+        this.car = car;
     }
 
-    public Double getCash()
-    {
+    public Car getCar(int i) {
+        return garage[i];
+    }
+
+    public Car[] getCars() {
+        return garage;
+    }
+
+    public void setCar(Car car, int i) {
+        this.garage[i] = car;
+    }
+
+    public Double getCash() {
         return cash;
     }
 
 
-    public void setCash(Double cash)
-    {
+    public void setCash(Double cash) {
         this.cash = cash;
     }
+
     @Override
     public String toString() {
         return "Human{" +
@@ -93,10 +106,34 @@ public class Human extends Animal implements Feedable {
 
     public void carsvalue() {
         Double sum = 0.0;
-        for (int i = 0; i < this.cars.length; i++) {
-            sum += this.cars[i].value;
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] != null) {
+                sum += this.garage[i].value;
+            }
         }
         System.out.println("value of your garage content is " + sum);
+    }
+
+    public void sortGarage() {
+        Arrays.sort(this.getCars(), new YearOfProductionComparator());
+    }
+
+    public boolean hasCar(Car ownCar) {
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == ownCar) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean freeSpace() {
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == null) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
