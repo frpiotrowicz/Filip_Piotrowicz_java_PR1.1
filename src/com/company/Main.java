@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         Human me = new Human();
-        Human someone = new Human();
+        Human someone = new Human(4);
 
         FarmAnimal rabbit = new FarmAnimal("rabbit");
         LPG car = new LPG("ford", "mustang", 1969, 1000.0);
@@ -29,21 +29,39 @@ public class Main {
         me.farmAnimal = rabbit;
         me.car.refuel();
 
-        me.cars[0] = new LPG("fiat",
+        LPG car1 = new LPG("fiat",
                 "punto",
                 1995,
                 1500.0);
-        me.cars[1] = new Electric("nissan",
+        Electric car2 = new Electric("nissan",
                 "leaf",
                 2020,
                 50300.0);
-        me.cars[2] = new Diesel("ford",
+        Diesel car3 = new Diesel("ford",
                 "mustang",
                 1969,
                 2250.0);
-        System.out.println(Arrays.toString(me.cars));
+
+        me.setCar(car1, 0);
+        me.setCar(car2, 1);
+        me.setCar(car3, 2);
+
+        someone.setCar(car, 2);
+
         me.carsvalue();
-        Arrays.sort(me.cars);
-        System.out.println(Arrays.toString(me.cars));
+        System.out.println("my cars" + Arrays.toString(me.getCars()));
+        System.out.println("someone cars: " + Arrays.toString(someone.getCars()));
+        System.out.println("my cash: " + me.getCash());
+        System.out.println("someone cash: " + someone.getCash());
+        car1.sell(me, someone, 2000.0);
+        System.out.println("my cars" + Arrays.toString(me.getCars()));
+        System.out.println("someone cars: " + Arrays.toString(someone.getCars()));
+        System.out.println("my cash: " + me.getCash());
+        System.out.println("someone cash: " + someone.getCash());
+        someone.sortGarage();
+        me.sortGarage();
+        System.out.println("my sorted garage" + Arrays.toString(me.getCars()));
+        System.out.println("someone sorted garage: " + Arrays.toString(someone.getCars()));
+        me.carsvalue();
     }
 }
