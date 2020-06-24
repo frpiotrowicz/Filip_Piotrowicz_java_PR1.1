@@ -16,6 +16,8 @@ public class Main {
 
         Human me = new Human();
         Human someone = new Human(4);
+        me.name = "Filip";
+        someone.name = "Bozydar";
 
         FarmAnimal rabbit = new FarmAnimal("rabbit");
         LPG car = new LPG("ford", "mustang", 1969, 1000.0);
@@ -23,11 +25,9 @@ public class Main {
         Phone lg = new Phone("LG", "V", 2012, 150.0, 6.0, "android");
 
         car.value = 120.0;
-        me.setCar(car);
         me.phone = lg;
         me.pet = dog;
         me.farmAnimal = rabbit;
-        me.car.refuel();
 
         LPG car1 = new LPG("fiat",
                 "punto",
@@ -47,21 +47,18 @@ public class Main {
         me.setCar(car3, 2);
 
         someone.setCar(car, 2);
-
         me.carsvalue();
-        System.out.println("my cars" + Arrays.toString(me.getCars()));
-        System.out.println("someone cars: " + Arrays.toString(someone.getCars()));
-        System.out.println("my cash: " + me.getCash());
-        System.out.println("someone cash: " + someone.getCash());
         car1.sell(me, someone, 2000.0);
-        System.out.println("my cars" + Arrays.toString(me.getCars()));
-        System.out.println("someone cars: " + Arrays.toString(someone.getCars()));
-        System.out.println("my cash: " + me.getCash());
-        System.out.println("someone cash: " + someone.getCash());
         someone.sortGarage();
         me.sortGarage();
-        System.out.println("my sorted garage" + Arrays.toString(me.getCars()));
-        System.out.println("someone sorted garage: " + Arrays.toString(someone.getCars()));
         me.carsvalue();
+        System.out.println(Arrays.asList(car1.owners));
+        car1.wasOwner(me);
+        car3.wasOwner(someone);
+        car1.didSell(me, someone);
+        car1.didSell(someone, me);
+        car3.didSell(me, someone);
+        System.out.println(car3.numberOfTransactions());
+
     }
 }

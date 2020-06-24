@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Human extends Animal implements Feedable {
     private static final Integer defGarageSize = 3;
-    String name;
+    public String name;
     String lName;
     public Animal farmAnimal;
     public Animal pet;
@@ -76,6 +76,9 @@ public class Human extends Animal implements Feedable {
 
     public void setCar(Car car, int i) {
         this.garage[i] = car;
+        if (car != null) {
+            car.owners.add(this);
+        }
     }
 
     public Double getCash() {
@@ -93,7 +96,7 @@ public class Human extends Animal implements Feedable {
                 "fName='" + name + '\'' +
                 ", lName='" + lName + '\'' +
                 ", pet=" + pet +
-                ", car=" + car +
+                ", cars=" + Arrays.asList(garage) +
                 ", salary=" + salary +
                 ", chash=" + cash +
                 '}';

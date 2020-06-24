@@ -2,16 +2,19 @@ package com.company.devices;
 
 import com.company.creatures.Human;
 
+import java.util.LinkedList;
+
 public abstract class Car extends Device {
 
     public String plates;
+    public LinkedList<Human> owners;
 
     public Car(String producer,
                String model,
                int yearOfProduction,
                Double value) {
-
         super(producer, model, yearOfProduction, value);
+        this.owners = new LinkedList<Human>();
     }
 
     @Override
@@ -38,7 +41,7 @@ public abstract class Car extends Device {
         if(buyer.getCash() > price)
         {
             if (seller.hasCar(this) == true) {
-                if (buyer.freeSpace() == true) {
+                if (buyer.freeSpace() == true && seller == this.owners.getLast()) {
                     for (int i = 0; i < buyer.getCars().length; i++) {
                         if (buyer.getCar(i) == null) {
                             buyer.setCar(this, i);
@@ -63,6 +66,33 @@ public abstract class Car extends Device {
             throw new Exception("buyer do not have enough money");
         }
     }
+
+    public void wasOwner(Human owner) {
+        if (this.owners.contains(owner)) {
+            System.out.println("yes this person was or is an owner of this car");
+        } else {
+            System.out.println("no this person never owned this car");
+        }
+    }
+
+    public void didSell(Human seller, Human buyer) {
+        if (this.owners.contains(seller) && this.owners.contains(buyer)) {
+            if (this.owners.indexOf(seller) == this.owners.indexOf(buyer) - 1) {
+                System.out.println("yes " + seller.name + " sold this car to " + buyer.name);
+            } else {
+                System.out.println("no there was no such transaction");
+            }
+        } else {
+            System.out.println("no there was no such transaction");
+        }
+
+    }
+
+    public int numberOfTransactions() {
+        int transactionNumber = this.owners.size() - 1;
+        return transactionNumber;
+    }
+
 
     public abstract void refuel();
 }
