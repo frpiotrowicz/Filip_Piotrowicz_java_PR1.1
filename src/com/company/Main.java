@@ -3,12 +3,7 @@ package com.company;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Human;
 import com.company.creatures.Pet;
-import com.company.devices.Diesel;
-import com.company.devices.Electric;
-import com.company.devices.LPG;
-import com.company.devices.Phone;
-
-import java.util.Arrays;
+import com.company.devices.*;
 
 public class Main {
 
@@ -28,6 +23,12 @@ public class Main {
         me.phone = lg;
         me.pet = dog;
         me.farmAnimal = rabbit;
+
+        Application app1 = new Application("dejsbug", 1.1, 500.0);
+        Application app2 = new Application("bkejp", 3.1, 0.0);
+        Application app3 = new Application("ctmuzik", 15.4, 25.0);
+        Application app4 = new Application("aetfix", 5.1, 0.0);
+        Application app5 = new Application("apka", 1.0, 12.0);
 
         LPG car1 = new LPG("fiat",
                 "punto",
@@ -52,13 +53,20 @@ public class Main {
         someone.sortGarage();
         me.sortGarage();
         me.carsvalue();
-        System.out.println(Arrays.asList(car1.owners));
-        car1.wasOwner(me);
-        car3.wasOwner(someone);
-        car1.didSell(me, someone);
-        car1.didSell(someone, me);
-        car3.didSell(me, someone);
-        System.out.println(car3.numberOfTransactions());
+
+        lg.installNewApp(me, app1);
+        lg.installNewApp(me, app2);
+        lg.installNewApp(me, app3);
+        lg.installNewApp(me, app4);
+        lg.isItInstalled(app2);
+        lg.isItInstalled(app5);
+        lg.isItInstalled("appka");
+        lg.isItInstalled("skejp");
+        lg.freeApps();
+        System.out.println("value of your apps is " + lg.appsValue());
+        lg.sortAlphabetically();
+        lg.appsByValue();
+
 
     }
 }
